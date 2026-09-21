@@ -1,6 +1,6 @@
 ---
 description: Specification for Kitsu List Provider for AniBridge
-status: frozen
+status: shipped
 primary_domain: provider
 ---
 

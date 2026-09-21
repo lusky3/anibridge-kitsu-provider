@@ -1,6 +1,12 @@
 ---
 description: Project architecture and technology stack for anibridge-kitsu-provider.
 applies_to: ["**"]
+lifecycle:
+  owner: team
+  review_cadence: on-event
+  review_trigger: architecture changes
+  supersedes: none
+  superseded_by: none
 ---
 
 # ADR-001: Project Architecture & Tech Stack

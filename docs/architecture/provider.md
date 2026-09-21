@@ -2,6 +2,12 @@
 domain: provider
 status: living
 description: Architecture overview and domain boundaries for AniBridge providers.
+lifecycle:
+  owner: team
+  review_cadence: on-event
+  review_trigger: architecture changes
+  supersedes: none
+  superseded_by: none
 ---
 
 # Domain Architecture: Provider

@@ -3,8 +3,8 @@
 > This is the **Single Source of Truth (SSoT)** — global project state that auto-updates
 > via `/ship`. You don't edit this manually; placeholders fill in as you complete work.
 
-- **Project Intent**: [Describe your project in one line]
-- **Project Name**: (set by /app-init)
+- **Project Intent**: Kitsu list provider bridge for AniBridge
+- **Project Name**: anibridge-kitsu-provider
 - **Core Guardrails**:
   - Correctness first: No claim of completion without evidence.
   - Small & reversible: Prioritize small, reversible changes; avoid unauthorized refactoring.
@@ -15,14 +15,14 @@
   - Task Isolation: `.agentcortex/context/work/<worklog-key>.md`
   - Active Work Log Path: derive <worklog-key> from the raw branch name using filesystem-safe normalization before any gate checks.
   - Workflows & Policies: `.agent/workflows/*.md`, `.agent/rules/*.md`
-- **Last Updated**: (updated by /ship)
+- **Last Updated**: 2026-09-21
 - **Last Verified**: 2026-09-21
-- **Update Sequence**: 0
+- **Update Sequence**: 2
 - **ADR Index**:
   - docs/adr/ADR-001-project-architecture-and-tech-stack.md
 - **Active Backlog**: (none yet)
 - **Spec Index** (project specs at `docs/specs/`):
-  - (none yet — use `/spec-intake` or `/spec` to create new specs)
+  - docs/specs/kitsu-provider.md [status: shipped] [primary_domain: provider]
 - **Canonical Commands**:
   - `/spec-intake`: Import external specs (from other LLMs, documents, or natural language). Handles large product specs via decomposition. Runs before `/bootstrap`.
   - `/bootstrap`: Task initialization & classification freeze.
@@ -61,4 +61,7 @@
 
 ## Ship History
 
-(none yet — use `/ship` to record completed work)
+### Ship-main-2026-09-21
+- Feature shipped: Implement Kitsu list provider bridge for kitsu.app with anibridge-list-base
+- Tests: Pass (70 passed, 94% coverage)
+- Commit: 5e9a29cc7aa3f5f8b16b52bbe8b4c6cb4fc6c472

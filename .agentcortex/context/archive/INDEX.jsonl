@@ -1,0 +1,1 @@
+{"branch": "main", "classification": "feature", "decisions": ["Project Architecture and Tech Stack"], "log": "main-20260921.md", "modules": ["src/anibridge/providers/list/kitsu"], "patterns": ["provider"], "prev_sha": "GENESIS", "shipped": "2026-09-21", "specs": ["docs/specs/kitsu-provider.md"]}
