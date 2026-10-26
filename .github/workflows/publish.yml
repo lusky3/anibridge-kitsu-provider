@@ -8,15 +8,15 @@ on:
 jobs:
   verify:
     name: Verify Version and Changelog
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
       - name: Checkout repository
         uses: actions/checkout@v7
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
-          python-version: "3.14"
+          python-version: "3.14.9"
 
       - name: Verify Version & CHANGELOG.md
         shell: bash
@@ -61,7 +61,7 @@ jobs:
   publish:
     name: Build and publish to PyPI
     needs: verify
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     environment: publish
     permissions:
       id-token: write
@@ -74,7 +74,7 @@ jobs:
       - name: Set up uv
         uses: astral-sh/setup-uv@v5
         with:
-          python-version: "3.14"
+          python-version: "3.14.9"
           enable-cache: true
 
       - name: Build package
