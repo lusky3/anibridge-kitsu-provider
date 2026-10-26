@@ -36,8 +36,10 @@ jobs:
         with:
           python-version: "3.14.9"
 
-      - name: Install dependencies
-        run: uv sync --frozen
+      - name: Export locked dependencies
+        run: uv export --frozen --no-hashes --no-emit-project -o requirements-audit.txt
 
+      # Audit only the project's locked dependencies (not the runner's system Python).
+      # diskcache has no fixed release yet (PYSEC-2026-2447); remove the ignore once one ships.
       - name: Run pip-audit
-        run: uv run pip install pip-audit && uv run pip-audit
+        run: uvx pip-audit -r requirements-audit.txt --no-deps --disable-pip --ignore-vuln PYSEC-2026-2447
