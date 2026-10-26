@@ -57,6 +57,53 @@ providers:
 | `base_url` | `str` | `https://kitsu.app/api/edge` | Kitsu JSON:API root endpoint. |
 | `oauth_url` | `str` | `https://kitsu.app/api/oauth/token` | Kitsu OAuth2 token endpoint. |
 
+### How to Authenticate with Kitsu
+
+Kitsu does not offer static "API Keys" generated through a web dashboard. Instead, it uses **OAuth 2.0**. You have two options for setting up authentication:
+
+#### Option 1: Username & Password (Recommended & Fully Automated)
+Set your Kitsu login email (or username) and password in the AniBridge configuration:
+```yaml
+providers:
+  kitsu:
+    username: your_email@example.com
+    password: your_kitsu_password
+```
+When AniBridge starts, `anibridge-kitsu-provider` automatically contacts `https://kitsu.app/api/oauth/token`, exchanges your credentials for a Bearer access token, and manages authentication headers behind the scenes.
+
+#### Option 2: Pre-generated Bearer Token
+If you prefer not to store your Kitsu password in configuration files, you can manually generate a Bearer token via `curl`:
+
+```bash
+curl -X POST https://kitsu.app/api/oauth/token \
+  -H "Content-Type: application/json" \
+  -H "Accept: application/json" \
+  -d '{
+    "grant_type": "password",
+    "username": "your_email@example.com",
+    "password": "your_password"
+  }'
+```
+
+Kitsu will respond with a JSON object:
+```json
+{
+  "access_token": "2f8b...",
+  "token_type": "bearer",
+  "expires_in": 7200,
+  "refresh_token": "4a1c...",
+  "scope": "public",
+  "created_at": 1726880000
+}
+```
+Copy the `"access_token"` string and supply it to your AniBridge configuration:
+```yaml
+providers:
+  kitsu:
+    token: "2f8b..."
+```
+*(Note: Bearer tokens generated this way expire based on Kitsu's token lifecycle, so Option 1 is recommended for unattended, long-running sync setups.)*
+
 ## Status Mapping
 
 AniBridge normalizes list statuses across different anime tracking services. The mapping for Kitsu is:
