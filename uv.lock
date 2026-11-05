@@ -160,14 +160,14 @@ dev = [
 
 [[package]]
 name = "anibridge-list-base"
-version = "0.2.0"
+version = "0.2.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "anibridge-utils" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/17/63/2ae9cf4623286ff3953a17d6a54a3b7e7b2365947efc55ef912c61f6ff85/anibridge_list_base-0.2.0.tar.gz", hash = "sha256:cca873043c27c2e76727c2fcacd8ecdbf1a408288a3fda19b8c5e385c85cfb52", size = 6705, upload-time = "2026-04-02T16:48:42.629Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/63/1a/de2e438049678c55e7b0a60b1b65d212ceabe4feb2a2c423f3cd81d01fbb/anibridge_list_base-0.2.1.tar.gz", hash = "sha256:c7dfad22a611086af3931c55de9faf98c2eab84de585e349015343afd36f2b48", size = 7301, upload-time = "2026-10-24T04:24:37.73Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/ec/04/89189fda1e95a108ecb9ea5ee57e4c447496c68b3b2942d9bf57b05ed1af/anibridge_list_base-0.2.0-py3-none-any.whl", hash = "sha256:f3090b312757c7b76f9b5340e643ec5df6e8eda490228532e4150ffc9071d973", size = 8021, upload-time = "2026-04-02T16:48:43.256Z" },
+    { url = "https://files.pythonhosted.org/packages/a9/66/b6f6875beea7ad123c0f7b04d0a6ad5a29232551ba4b79c8a2b2b18d20fe/anibridge_list_base-0.2.1-py3-none-any.whl", hash = "sha256:2c51d2c31dea9863b15a39ea0dbbc32b7ae7ccd7e73b5fb0860512de0463c7bb", size = 7989, upload-time = "2026-10-24T04:24:36.951Z" },
 ]
 
 [[package]]
